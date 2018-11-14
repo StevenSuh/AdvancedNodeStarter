@@ -23,7 +23,7 @@ passport.use(
       clientSecret: keys.googleClientSecret,
       proxy: true
     },
-    async (accessToken, refreshToken, profile, done) => {
+    async (_accessToken, _refreshToken, profile, done) => {
       try {
         const existingUser = await User.findOne({ googleId: profile.id });
         if (existingUser) {
