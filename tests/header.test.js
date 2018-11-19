@@ -12,7 +12,7 @@ describe('header', () => {
 
     await page.setCookie({ name: 'session', value: session });
     await page.setCookie({ name: 'session.sig', value: signature });
-    await page.goto('localhost:3000/blogs');
+    await page.goto('http://localhost:3000/blogs');
     await page.waitFor('a[href="/auth/logout"]');
 
     return user;
@@ -20,10 +20,11 @@ describe('header', () => {
 
   beforeEach(async () => {
     browser = await puppeteer.launch({
-      headless: false,
+      args: ['--no-sandbox'],
+      headless: true,
     });
     page = await browser.newPage();
-    await page.goto('localhost:3000');
+    await page.goto('http://localhost:3000');
   });
 
   afterEach(async () => {
