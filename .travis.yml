@@ -12,9 +12,9 @@ cache:
     - node_modules
     - client/node_modules
 install:
-  - yarn install
-  - yarn run build
+  - npm install
+  - npm run build
 script:
-  - nohup yarn run start &
+  - nohup npm run start &
   - sleep 10
-  - yarn run test
+  - npm run test
