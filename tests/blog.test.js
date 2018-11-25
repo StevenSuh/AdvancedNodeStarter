@@ -21,7 +21,7 @@ describe('blog', () => {
   beforeEach(async () => {
     browser = await puppeteer.launch({
       args: ['--no-sandbox'],
-      headless: false,
+      headless: true,
     });
     page = await browser.newPage();
     await page.goto('http://localhost:3000');
