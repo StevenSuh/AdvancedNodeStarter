@@ -12,7 +12,7 @@ cache:
     - node_modules
     - client/node_modules
 install:
-  - npm install && npm audit fix
+  - npm install
   - npm run build
 script:
   - nohup npm run start &

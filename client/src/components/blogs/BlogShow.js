@@ -11,7 +11,7 @@ class BlogShow extends Component {
     if (this.props.blog.imageUrl) {
       return <img
         src={`https://s3-us-west-1.amazonaws.com/blog-dev-stevensuh/${this.props.blog.imageUrl}`}
-        tag="blog post image"
+        alt="blog post"
       />
     }
   }
